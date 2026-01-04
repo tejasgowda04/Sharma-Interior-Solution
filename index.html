@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharma Interiors | Premium Turnkey Interior Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        /* CSS Variables for Brand Colors */
+        :root {
+            --primary-maroon: #8B0000;
+            --primary-maroon-light: #a82a2a;
+            --white: #FFFFFF;
+            --light-grey: #F8F9FA;
+            --medium-grey: #E9ECEF;
+            --dark-grey: #6C757D;
+            --text-dark: #343A40;
+            --warm-beige: #F5F1E8;
+            --soft-gold: #D4AF37;
+            --whatsapp-green: #25D366;
+            --whatsapp-green-dark: #128C7E;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-maroon);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title-center {
+            text-align: center;
+        }
+        
+        .section-title-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        /* Enhanced Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-maroon-light) 100%);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--primary-maroon-light) 0%, var(--primary-maroon) 100%);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, var(--whatsapp-green-dark) 100%);
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+            background: linear-gradient(135deg, var(--whatsapp-green-dark) 0%, var(--whatsapp-green) 100%);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-maroon);
+            border: 2px solid var(--primary-maroon);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-maroon);
+            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Header Styles - Reduced Height */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 8px 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-maroon);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-maroon);
+        }
+        
+        .logo-text span {
+            color: var(--text-dark);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav a {
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            font-size: 1.05rem;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-maroon) 0%, var(--soft-gold) 100%);
+            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 3px;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-maroon);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            margin-top: 0;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(139, 0, 0, 0.4) 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .highlight-item i {
+            color: var(--soft-gold);
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-grey);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--medium-grey);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-maroon) 0%, var(--soft-gold) 100%);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+            transform-origin: left;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-maroon);
+        }
+        
+        .service-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--primary-maroon);
+            margin-bottom: 25px;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Packages Section */
+        .packages {
+            background-color: var(--light-grey);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .package-header {
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-maroon-light) 100%);
+            color: var(--white);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%);
+            background-size: 15px 15px;
+            opacity: 0.3;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .package-header h3 {
+            margin-bottom: 0;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .package-body {
+            padding: 30px;
+        }
+        
+        .package-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        
+        .package-feature i {
+            color: var(--soft-gold);
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .package-cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        /* Gallery Section - Updated for Local Images */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 320px;
+            cursor: pointer;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: var(--light-grey);
+        }
+        
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .reason-item {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reason-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .reason-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reason-item:hover:before {
+            opacity: 0.05;
+        }
+        
+        .reason-icon {
+            font-size: 2.8rem;
+            color: var(--primary-maroon);
+            margin-bottom: 25px;
+            transition: transform 0.4s ease;
+        }
+        
+        .reason-item:hover .reason-icon {
+            transform: scale(1.1);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-maroon-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2:after {
+            background-color: var(--soft-gold);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: rgba(255, 255, 255, 0.95);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* WhatsApp Contact Section */
+        .whatsapp-contact {
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background: var(--light-grey);
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon {
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-maroon-light) 100%);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+        }
+        
+        .whatsapp-icon {
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, var(--whatsapp-green-dark) 100%);
+        }
+        
+        .service-areas {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--light-grey);
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-maroon);
+        }
+        
+        .service-areas h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            color: var(--primary-maroon);
+        }
+        
+        .whatsapp-form {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--medium-grey);
+        }
+        
+        .whatsapp-form h3 {
+            margin-bottom: 25px;
+            color: var(--primary-maroon);
+        }
+        
+        .whatsapp-form h3 i {
+            color: var(--whatsapp-green);
+            margin-right: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid var(--medium-grey);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-maroon);
+            box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+        }
+        
+        .form-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(37, 211, 102, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid var(--whatsapp-green);
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #212529 100%);
+            color: var(--white);
+            padding: 70px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-maroon) 0%, var(--soft-gold) 100%);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--white);
+        }
+        
+        .footer-logo .logo-text {
+            color: var(--white);
+        }
+        
+        .footer-logo .logo-text span {
+            color: var(--medium-grey);
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+        }
+        
+        .footer-links h4, .footer-services h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4:after, .footer-services h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-maroon);
+        }
+        
+        .footer-links ul, .footer-services ul {
+            list-style: none;
+        }
+        
+        .footer-links li, .footer-services li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a, .footer-services a {
+            color: rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover, .footer-services a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-maroon);
+            transform: translateY(-5px) rotate(5deg);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, var(--whatsapp-green-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7); }
+            100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
+        }
+        
+        .floating-whatsapp:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 66px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                padding: 25px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                border-top: 2px solid var(--primary-maroon);
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0 0 20px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .packages-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-form {
+                padding: 30px 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-whatsapp {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp" id="floatingWhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <!-- Replace with your logo.jpg -->
+                <img src="https://images.unsplash.com/photo-1567446537710-0e9b8d4d8c4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sharma Interiors Logo" class="logo-img">
+                <div class="logo-text">Sharma<span>Interiors</span></div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">🏠 Home</a></li>
+                    <li><a href="#about">ℹ️ About</a></li>
+                    <li><a href="#services">🛠️ Services</a></li>
+                    <li><a href="#packages">📦 Packages</a></li>
+                    <li><a href="#gallery">📸 Gallery</a></li>
+                    <li><a href="#contact">📱 Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>✨ Creative & Functional Interior Solutions ✨</h1>
+                <p>🏡 Turnkey Interior Design for Home, Office & Commercial Spaces 🏢</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Get Free Consultation</a>
+                    <a href="https://wa.me/919876543210?text=Hello%20Sharma%20Interiors,%20I%20am%20interested%20in%20your%20interior%20services" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                </div>
+                <div class="hero-highlights">
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> ✅ Quality Finish</div>
+                    <div class="highlight-item"><i class="fas fa-calendar-check"></i> ⏰ On-Time Delivery</div>
+                    <div class="highlight-item"><i class="fas fa-rupee-sign"></i> 💰 Budget Friendly</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>🌟 About Sharma Interiors 🌟</h2>
+            </div>
+            <div class="about-content">
+                <p>Sharma Interiors delivers creative, functional, and budget-friendly interior solutions for homes, offices, and commercial spaces. 🏠🏢 We specialize in turnkey interior projects with quality finishes, timely execution, and customer-focused designs. ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>🛠️ Our Services 🛠️</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Complete Home Interiors</h3>
+                    <p>🏡 End-to-end interior solutions for your entire home</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Turnkey Interior Solutions</h3>
+                    <p>🔧 Complete project execution from design to finish</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Modular Kitchen</h3>
+                    <p>🍳 Custom-designed modular kitchens with premium finishes</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Bedroom & Living Room Interiors</h3>
+                    <p>🛏️ Personalized spaces for comfort and style</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Office & Commercial Interiors</h3>
+                    <p>💼 Professional spaces that enhance productivity</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>False Ceiling & Lighting</h3>
+                    <p>💡 Modern false ceilings with innovative lighting solutions</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Painting & Finishing</h3>
+                    <p>🎨 High-quality painting services with premium materials</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Labour Work</h3>
+                    <p>👷 Skilled labour for all interior construction needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>📦 Interior Packages 📦</h2>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>2 BHK Interior Package</h3>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Premium quality materials</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Complete modular kitchen</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ False ceiling with LED lighting</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Custom wardrobes & storage</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Painting & finishing work</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ 60-day timely delivery ⏰</span>
+                        </div>
+                        <div class="package-cta">
+                            <a href="#contact" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>3 BHK Interior Package</h3>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ All features of 2 BHK package</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Extended living area design</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Additional bedroom furniture</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Premium flooring options</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Smart home integration options</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ 90-day timely delivery ⏰</span>
+                        </div>
+                        <div class="package-cta">
+                            <a href="#contact" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Custom Interior Package</h3>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Fully customized design</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Premium & luxury materials</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Personalized consultation</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Flexible timeline</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ Commercial & office interiors</span>
+                        </div>
+                        <div class="package-feature">
+                            <i class="fas fa-check"></i>
+                            <span>✅ End-to-end project management</span>
+                        </div>
+                        <div class="package-cta">
+                            <a href="#contact" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - Updated for Local Images -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>📸 Project Gallery 📸</h2>
+            </div>
+            <div class="gallery-grid">
+                <!-- Replace these with your local .jpg files -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Modern Kitchen Interior" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>🍳 Modern Kitchen</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1558&q=80" alt="Living Room Interior" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>🛋️ Living Room</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Bedroom Interior" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>🛏️ Master Bedroom</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Complete Home Interior" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>🏡 Complete Home Interior</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us" id="why-choose">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>⭐ Why Choose Sharma Interiors ⭐</h2>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>🎨 Creative & Functional Designs</h3>
+                    <p>Balancing aesthetics with practical functionality for spaces that work beautifully. ✨</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>🏆 Quality Finish</h3>
+                    <p>Premium materials and skilled craftsmanship for flawless interior finishes. ✅</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>⏰ On-Time Delivery</h3>
+                    <p>Strict adherence to project timelines with transparent progress updates. 📅</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>💰 Budget-Friendly Packages</h3>
+                    <p>Transparent pricing with no hidden costs, offering value at every budget level. 💵</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>👨‍👩‍👧‍👦 Experienced Team</h3>
+                    <p>Skilled designers and craftsmen with years of interior design experience. 🎓</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>🔧 End-to-End Execution</h3>
+                    <p>Complete project management from concept to final handover. 📋</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2>✨ Design Your Dream Home With Confidence ✨</h2>
+            <p>🏡 Transform your space with our premium interior solutions. Get in touch for a personalized consultation today. 💬</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Book Consultation</a>
+                <a href="https://wa.me/919876543210?text=Hello%20Sharma%20Interiors,%20I%20want%20to%20book%20a%20consultation" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Contact Section -->
+    <section class="whatsapp-contact" id="contact">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>📱 Contact Us on WhatsApp 📱</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>💬 Get In Touch</h3>
+                    <p>Contact us directly on WhatsApp for a free consultation and quote for your interior project. All enquiries are handled via WhatsApp only.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon whatsapp-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4>WhatsApp Only</h4>
+                                <p><a href="https://wa.me/919876543210?text=Hello%20Sharma%20Interiors,%20I%20am%20interested%20in%20your%20interior%20services" target="_blank">+91 98765 43210</a></p>
+                                <p><small>Click to chat directly on WhatsApp</small></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>📍 Location</h4>
+                                <p>India - Serving Major Cities Nationwide 🇮🇳</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-areas">
+                        <h4>🌍 Service Areas</h4>
+                        <p>We provide interior design services across India including Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Pune, and other major cities. 🏙️</p>
+                    </div>
+                </div>
+                
+                <div class="whatsapp-form">
+                    <h3><i class="fab fa-whatsapp"></i> Send Quick Enquiry</h3>
+                    <form id="whatsappForm">
+                        <div class="form-group">
+                            <label for="name">👤 Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">📱 WhatsApp Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your WhatsApp Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">💭 Project Requirements</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your interior project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-whatsapp btn-block"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+                        <div class="form-note">
+                            <p><strong>Note:</strong> This will open WhatsApp with a pre-filled message. Make sure WhatsApp is installed on your device. 📲</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <!-- Replace with your logo.jpg -->
+                        <img src="https://images.unsplash.com/photo-1567446537710-0e9b8d4d8c4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sharma Interiors Logo" class="footer-logo-img">
+                        <div class="logo-text">Sharma<span>Interiors</span></div>
+                    </div>
+                    <p>✨ Creative, functional, and budget-friendly interior solutions for homes, offices, and commercial spaces across India. 🇮🇳</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>🛠️ Services</h4>
+                    <ul>
+                        <li><a href="#services">🏡 Complete Home Interiors</a></li>
+                        <li><a href="#services">🔧 Turnkey Solutions</a></li>
+                        <li><a href="#services">🍳 Modular Kitchen</a></li>
+                        <li><a href="#services">💼 Office Interiors</a></li>
+                        <li><a href="#services">💡 False Ceiling & Lighting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>🔗 Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">🏠 Home</a></li>
+                        <li><a href="#about">ℹ️ About Us</a></li>
+                        <li><a href="#services">🛠️ Services</a></li>
+                        <li><a href="#packages">📦 Packages</a></li>
+                        <li><a href="#gallery">📸 Gallery</a></li>
+                        <li><a href="#contact">📱 Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>📞 Contact Info</h4>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919876543210" target="_blank">WhatsApp Only</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> India - Pan India Service 🇮🇳</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Sharma Interiors. All Rights Reserved. | All enquiries via WhatsApp only 📱</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '5px 0';
+                header.style.boxShadow = '0 5px 25px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.padding = '8px 0';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // WhatsApp Form Submission
+        const whatsappForm = document.getElementById('whatsappForm');
+        whatsappForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hello Sharma Interiors!%0A%0AName: ${name}%0APhone: ${phone}%0AProject Requirements: ${message}%0A%0AI am interested in your interior services. Please contact me.`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/919876543210?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            whatsappForm.reset();
+        });
+        
+        // Floating WhatsApp Button
+        const floatingWhatsApp = document.getElementById('floatingWhatsApp');
+        floatingWhatsApp.addEventListener('click', () => {
+            window.open('https://wa.me/919876543210?text=Hello%20Sharma%20Interiors,%20I%20am%20interested%20in%20your%20interior%20services', '_blank');
+        });
+        
+        // Scroll Animation for Sections
+        const sections = document.querySelectorAll('section');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Ripple effect for buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple-effect');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            });
+        });
+        
+        // Add some dynamic emoji animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const emojis = document.querySelectorAll('.hero h1, .section-title-center h2, .reason-item h3, .footer-links h4, .footer-services h4');
+            emojis.forEach(emojiElement => {
+                if (emojiElement.innerHTML.includes('✨')) {
+                    setInterval(() => {
+                        if (Math.random() > 0.7) {
+                            emojiElement.style.transform = 'scale(1.05)';
+                            setTimeout(() => {
+                                emojiElement.style.transform = 'scale(1)';
+                            }, 300);
+                        }
+                    }, 3000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
